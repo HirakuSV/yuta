@@ -1,7 +1,6 @@
 const { Client, Collection } = require('discord.js');
 const fs = require('fs');
 const path = require('node:path');
-
 const yuta = new Client({ intents: ['Guilds', 'GuildMembers', 'GuildVoiceStates'] });
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 
