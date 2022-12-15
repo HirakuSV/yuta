@@ -6,8 +6,10 @@ Yet another simple slash-commands based Discord music bot, using Discord.js & yt
 - Basic knowledge about Node.js
 
 ## Examples
-![playing songs]()
-![nowplaying command]()
+### Playing songs
+![playing songs](https://media.discordapp.net/attachments/1052930175777636392/1052930219503267850/Screenshot_2022-12-15-17-45-36-72_572064f74bd5f9fa804b05334aa4f912.jpg)
+### Now playing command
+![nowplaying command](https://media.discordapp.net/attachments/1052930175777636392/1052930219306131548/Screenshot_2022-12-15-17-46-34-09_572064f74bd5f9fa804b05334aa4f912.jpg)
 
 ## Additional info
 This bot has some more errors to fix; if you encounter any, you can always open an issue to discuss it with me, maybe I can help!
