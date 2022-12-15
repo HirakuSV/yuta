@@ -79,13 +79,12 @@ module.exports = {
           streamPlayer(guildId, songQueue.songs[0]);
         }
       });
+      songQueue.textChannel.send({ embeds: [mcEmbed(songStream.thumbnail, songStream.title, `Now playing **${songStream.title}**\nRequested by ${songStream.author}`, yuta.user.displayAvatarURL())] });
+      yuta.player.set(interaction.guild.id, player);
       player.on('error', (err) => {
-        console.error(err);
         songQueue.textChannel.send(`**${songQueue.songs[0].title}** has encoding errors. Playing the next song.`);
         skip();
       });
-      songQueue.textChannel.send({ embeds: [mcEmbed(songStream.thumbnail, songStream.title, `Now playing **${songStream.title}**\nRequested by ${songStream.author}`, yuta.user.displayAvatarURL())] });
-      yuta.player.set(interaction.guild.id, player);
     }
     async function skip(ins) {
       if (!songQueue.songs) return songQueue.textChannel.send('No songs to skip to.')
