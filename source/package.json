@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.8.0",
-    "@discordjs/voice": "^0.13.0",
+    "@discordjs/voice": "^0.14.0",
     "discord.js": "^14.6.0",
     "dotenv": "^16.0.3",
     "fast-average-color-node": "^2.4.0",
