@@ -2,7 +2,7 @@
 Yet another simple slash-commands based Discord music bot, using Discord.js & ytdl-core.
 
 ## Prerequisites
-- Node.js v17+
+- Node.js v16+
 - Basic knowledge about Node.js
 
 ## Examples
