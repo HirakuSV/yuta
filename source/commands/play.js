@@ -13,6 +13,7 @@ module.exports = {
     .setRequired(true)),
   async execute(interaction, yuta) {
     if (!interaction.member.voice.channel) return interaction.reply('You need to be in a voice channel.');
+    await interaction.deferReply();
     const guildQueue = yuta.queue.get(interaction.guild.id);
     const query = interaction.options.getString('song');
     let song = {};
@@ -28,7 +29,7 @@ module.exports = {
         return interaction.reply('I cannot find anything related to your query.');
       }
     }
-    interaction.reply({ embeds: [mcEmbed(song.thumbnail, song.title, `Added **${song.title}** to the queue`, yuta.user.displayAvatarURL())] });
+    interaction.editReply({ embeds: [mcEmbed(song.thumbnail, song.title, `Added **${song.title}** to the queue`, yuta.user.displayAvatarURL())] });
     if (!guildQueue) {
       const queueConstructor = {
         targetChannel: interaction.member.voice.channel,
