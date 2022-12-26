@@ -6,8 +6,9 @@ module.exports = {
         .setName('stop')
         .setDescription('stop playing music.'),
     async execute(interaction, yuta) {
+       if (!interaction.member.voice.channel) return interaction.reply('You need to be in a voice channel.');
         yuta.queue.delete(interaction.guild.id);
-        getVoiceConnection(interaction.guild.id).destroy();
+        if (getVoiceConnection(interaction.guild.id)) getVoiceConnection(interaction.guild.id).destroy();
         interaction.reply('Deleted queue and left the voice channel.');
     },
 };
