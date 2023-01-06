@@ -4,3 +4,4 @@ source/.env.test
 jspm_packages
 source/.npm
 .cache
+.cno.bat
