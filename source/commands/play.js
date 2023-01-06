@@ -84,11 +84,11 @@ module.exports = {
       yuta.player.set(interaction.guild.id, player);
       player.on('error', (err) => {
         songQueue.textChannel.send(`**${songQueue.songs[0].title}** has encoding errors. Playing the next song.`);
-        skip();
+        if (songQueue.songs.length < 1) skip();
       });
     }
     async function skip(ins) {
-      if (!songQueue.songs) return songQueue.textChannel.send('No songs to skip to.')
+      if (!songQueue.songs.length) return songQueue.textChannel.send('No songs to skip to.')
       songQueue.songs.shift();
       streamPlayer(interaction.guild.id, songQueue.songs[0]);
       if (ins) {
