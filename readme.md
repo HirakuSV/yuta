@@ -13,6 +13,5 @@ Yet another simple slash-commands based Discord music bot, using Discord.js & yt
 
 ## Additional info
 This bot has some more issues to fix; I'll soon fix them and it will be all ready!
-Also this bot is completely developed by me, yes me! uwu
 
 ### Thank you for reading/using my code!
