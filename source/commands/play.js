@@ -83,8 +83,13 @@ module.exports = {
       songQueue.textChannel.send({ embeds: [mcEmbed(songStream.thumbnail, songStream.title, `Now playing **${songStream.title}**\nRequested by ${songStream.author}`, yuta.user.displayAvatarURL())] });
       yuta.player.set(interaction.guild.id, player);
       player.on('error', (err) => {
-        songQueue.textChannel.send(`**${songQueue.songs[0].title}** has encoding errors. Playing the next song.`);
-        if (songQueue.songs.length < 1) skip();
+        songQueue.textChannel.send(`**${songQueue.songs[0].title}** has encoding errors.`);
+        if (songQueue.songs.length < 1) {
+          skip();
+        } else {
+          songQueue.connection.destroy();
+          yuta.queue.delete(interaction.guild.id);
+        }
       });
     }
     async function skip(ins) {
