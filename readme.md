@@ -12,7 +12,7 @@ Yet another simple slash-commands based Discord music bot, using Discord.js & yt
 ![nowplaying command](https://media.discordapp.net/attachments/1052930175777636392/1052930219306131548/Screenshot_2022-12-15-17-46-34-09_572064f74bd5f9fa804b05334aa4f912.jpg)
 
 ## Additional info
-This bot has some more errors to fix; if you encounter any, you can always open an issue to discuss it with me, maybe I can help!
+This bot has some more issues to fix; I'll soon fix them and it will be all ready!
 Also this bot is completely developed by me, yes me! uwu
 
 ### Thank you for reading/using my code!
