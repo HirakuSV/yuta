@@ -15,7 +15,7 @@ module.exports = {
     .setRequired(true)),
   async execute(interaction, yuta) {
     if (!interaction.member.voice.channel) return interaction.reply('You need to be in a voice channel.');
-    if (!interaction.member.voice.channel.permissionsFor(interaction.guild.me).has([PermissionsBitField.Flags.Connect, PermissionsBitField.Flags.Speak])) return interaction.reply();
+    if (!interaction.member.voice.channel.permissionsFor(interaction.guild.me).has([PermissionsBitField.Flags.Connect, PermissionsBitField.Flags.Speak])) return interaction.reply('I don\'t have peermissions to connect/speak to your channel.');
     await interaction.deferReply();
     const guildQueue = yuta.queue.get(interaction.guild.id);
     const query = interaction.options.getString('song');
