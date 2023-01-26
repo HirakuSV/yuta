@@ -4,6 +4,7 @@ const ytdl = require('ytdl-core');
 const ytsearch = require('yt-search');
 const mcEmbed = require('../utils/mcEmb');
 const imPlayer = require('../utils/player');
+const { PermissionsBitField } = require('discord.js');
 global.AbortController = require('node-abort-controller').AbortController;
 
 module.exports = {
@@ -14,6 +15,7 @@ module.exports = {
     .setRequired(true)),
   async execute(interaction, yuta) {
     if (!interaction.member.voice.channel) return interaction.reply('You need to be in a voice channel.');
+    if (!interaction.member.voice.channel.permissionsFor(interaction.guild.me).has([PermissionsBitField.Flags.Connect, PermissionsBitField.Flags.Speak])) return interaction.reply();
     await interaction.deferReply();
     const guildQueue = yuta.queue.get(interaction.guild.id);
     const query = interaction.options.getString('song');
