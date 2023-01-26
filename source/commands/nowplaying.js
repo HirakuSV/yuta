@@ -18,7 +18,7 @@ module.exports = {
         .setColor(color)
         .setImage(songQueue.songs[0].thumbnail)
         .setTitle(songQueue.songs[0].title)
-        .setDescription(`• Song by: ${songQueue.songs[0].artist}\n• Published: ${songQueue.songs[0].date}\n• Total length: ${songQueue.songs[0].length}\n• Requested by: ${songQueue.songs[0].author}\n• URL: ${songQueue.songs[0].url}`)
+        .setDescription(`• Song by: ${songQueue.songs[0].artist}\n• Published: ${songQueue.songs[0].date}\n• Total length: ${songQueue.songs[0].length}\n• Requested by: ${songQueue.songs[0].author}\n• URL: [YouTube Link](${songQueue.songs[0].url})`)
         interaction.reply({ embeds: [emb] });
     },
 };
