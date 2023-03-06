@@ -4,3 +4,5 @@ source/.env.test
 jspm_packages
 source/.npm
 .cache
+.github
+.git
